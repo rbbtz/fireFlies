@@ -1,6 +1,6 @@
 # fireFlies
 
-Copy the .js file and paste into the editor playground at https://editor.p5js.org to interact with the code output in real time.
+Copy the .js file and paste into the editor playground at https://editor.p5js.org to interact with the code output.
 Or open the .html file for the experience in a web browser. 
 
 Using the p5.js library, this JavaScript program simulates reactive flashing fireflies at night with an
