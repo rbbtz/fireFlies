@@ -37,6 +37,8 @@ class Particle {
     this.hovering = false;
     this.clicked = false;
     this.color = color(220, 255, 170, 100);
+    this.glowIntensity = random(50, 255);
+    this.glowDirection = random() > 0.5 ? 1 : -1;
   }
 
   update() {
@@ -53,11 +55,17 @@ class Particle {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
     this.acc.mult(0);
+
+    // Update glow intensity and direction
+    this.glowIntensity += this.glowDirection;
+    if (this.glowIntensity >= 255 || this.glowIntensity <= 50) {
+      this.glowDirection *= -1;
+    }
   }
 
   display() {
     noStroke();
-    fill(red(this.color), green(this.color), blue(this.color), this.alpha);
+    fill(red(this.color), green(this.color), blue(this.color), this.glowIntensity);
     ellipse(this.pos.x, this.pos.y, this.r);
   }
 
